@@ -98,11 +98,20 @@ const UserCard: React.FC<Props> = (props: Props) => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            {props.user.name.first} {props.user.name.last}
+            <p>
+              <a href="https://resumegenius.com/resume-samples">
+                {props.user.name.first} {props.user.name.last}
+              </a>
+            </p>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <p>Email: {props.user.email}</p>
+            <p>
+              Email:{" "}
+              <a href={`mailto:${props.user.email}`} style={{ color: "blue" }}>
+                {props.user.email}
+              </a>
+            </p>
             <p>Phone numebr: {props.user.phoneNumber}</p>
             <p>ID: {props.user.userId}</p>
             {
