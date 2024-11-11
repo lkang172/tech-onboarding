@@ -113,16 +113,12 @@ const UserCard: React.FC<Props> = (props: Props) => {
             </p>
             <p>Phone numebr: {props.user.phoneNumber}</p>
             <p>ID: {props.user.userId}</p>
-            {
-              <>
-                <p>Hexathons applied: </p>
-                <ul>
-                  {hexathons.map((hexathon, key) => (
-                    <li key={key}>{hexathon.name}</li>
-                  ))}
-                </ul>
-              </>
-            }
+            <p>Hexathons applied: </p>
+            <ul>
+              {hexathons.map((hexathon, key) => (
+                <li key={key}>{hexathon.name}</li>
+              ))}
+            </ul>
           </ModalBody>
 
           <ModalFooter>
