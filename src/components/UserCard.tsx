@@ -45,18 +45,17 @@ const UserCard: React.FC<Props> = (props: Props) => {
 
       const applications = await Promise.all(
         hexathons.map(async (hexathon: any) => {
-          const hexathonId = hexathon.id;
           const userApplications = await axios.get(
             apiUrl(Service.REGISTRATION, "/applications"),
             {
               params: {
-                hexathon: hexathonId,
                 userId: props.user.userId,
+                hexathon: hexathon.id,
               },
             }
           );
           if (userApplications.data.applications.length > 0) {
-            return { name: hexathon.name, id: hexathon.id };
+            return hexathon;
           } else {
             return null;
           }
